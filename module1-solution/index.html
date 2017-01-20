@@ -8,12 +8,14 @@
       .message { font-size: 1.3em; font-weight: bold; }
     </style>
   </head>
-<body>
-   <div class="container">
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+<body ng-app="LunchCheck">
+   <div class="container" ng-controller="LunchCheckController">
      <h1>Lunch Checker</h1>
 
          <div class="form-group">
-             <input id="lunch-menu" type="text"
+             <input id="lunch-menu" type="text" ng-model="lunchMenu"
              placeholder="list comma separated dishes you usually have for lunch"
              class="form-control">
          </div>
@@ -22,6 +24,7 @@
          </div>
          <div class="form-group message">
            <!-- Your message can go here. -->
+           {{displayMessage()}}
          </div>
    </div>
 
